@@ -1,0 +1,24 @@
+import time
+hour = int(input("type in the current hour: "))
+minute = int(input("type in the current minute: "))
+seconds = int(input("type in the current seconds: "))
+def display():
+    print(hour, ":", minute, ":", seconds)
+def add():
+    global hour
+    global minute
+    global seconds
+    seconds = seconds+1
+    if seconds == 60:
+        minute = minute + 1
+        seconds = 0
+    if minute == 60:
+        hour = hour + 1
+        minute = 0
+    if hour == 24:
+        hour = 0
+print("\n")
+while True:
+    time.sleep(1)
+    add()
+    display()
